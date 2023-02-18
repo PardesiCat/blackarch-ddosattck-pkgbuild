@@ -12,18 +12,12 @@ license=('MIT')
 depends=('python3')
 makedepends=('git' 'python-setuptools' 'python-pip')
 source=("git+https://github.com/MatrixTM/$pkgname.git")
-# if from pypi
-#source=("https://files.pythonhosted.org/packages/source/${_pkgname::1}/$_pkgname/$_pkgname-$pkgver.tar.gz")
 sha512sums=('SKIP')
 install="$pkgname.install"
 
 pkgver() {
   cd $pkgname
 
-  # use, if no version string provided neither in sources nor in git describe:
-  #echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-
-  # if tag exists, use this
   git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
@@ -34,8 +28,6 @@ package() {
   install -Dm 644 requirements.txt "$pkgdir/usr/share/$pkgname/requirements.txt"
   install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname/" *.md
 
-  # Only install license if required according to
-  # https://wiki.archlinux.org/index.php/PKGBUILD#license
   install -Dm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 
   rm -rf LICENSE *.md .gitignore
