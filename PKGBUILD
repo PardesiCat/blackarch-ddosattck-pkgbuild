@@ -1,5 +1,4 @@
 # This file is part of BlackArch Linux ( https://www.blackarch.org/ ).
-# See COPYING for license details.
 
 pkgname=MHDDoS
 pkgver=2.4.1

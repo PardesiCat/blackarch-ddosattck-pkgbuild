@@ -1,8 +1,7 @@
 # This file is part of BlackArch Linux ( https://www.blackarch.org/ ).
-# See COPYING for license details.
 
 pkgname=MHDDoS
-pkgver=2.4.1
+pkgver=2.4.r68.gb7a7beb
 pkgrel=1
 pkgdesc='Best DDoS Attack Script Python3, (Cyber / DDos) Attack With 56 Methods.'
 arch=('any')
